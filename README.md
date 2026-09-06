@@ -87,7 +87,7 @@ bioinformatics-portfolio/
 
 ```bash
 # Clone the repository
-git clone https://github.com/example/bioinformatics-portfolio.git
+git clone https://github.com/aashiq-parinda/bioinformatics-portfolio.git
 cd bioinformatics-portfolio
 
 # Create and activate a virtual environment
