@@ -1,0 +1,34 @@
+{
+  "target": {
+    "name": "Human Androgen Receptor LBD",
+    "source_pdb": "projects/03-alphafold-structure-analysis/data/1e3g_human_ar_lbd.pdb",
+    "prepared_pdb": "data/target_ar_lbd.pdb",
+    "prepared_pdbqt": "data/target_ar_lbd.pdbqt",
+    "chain_id": "A"
+  },
+  "grid_box": {
+    "center_x": 26.5,
+    "center_y": 28.0,
+    "center_z": 4.5,
+    "size_x": 22.0,
+    "size_y": 22.0,
+    "size_z": 22.0,
+    "spacing": 0.375
+  },
+  "top_affinities": [
+    {
+      "ligand_id": "DHT",
+      "affinity_kcal_mol": -11.23
+    },
+    {
+      "ligand_id": "Testosterone",
+      "affinity_kcal_mol": -10.43
+    },
+    {
+      "ligand_id": "Enzalutamide",
+      "affinity_kcal_mol": -9.83
+    }
+  ],
+  "total_poses": 27,
+  "disclaimer_acknowledged": true
+}

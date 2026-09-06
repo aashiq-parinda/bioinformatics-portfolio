@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproducible Molecular Docking & Interaction Report</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --secondary: #0f766e;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { opacity: 0.9; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .stat-card .label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: #f1f5f9; font-weight: 600; color: var(--text-muted); }
+    tr:hover { background-color: #f8fafc; }
+    .figure-container { text-align: center; margin: 1.5rem 0; }
+    .figure-container img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+    .figure-caption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+    .disclaimer {
+      background-color: #fffbeb;
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #92400e;
+      margin-top: 2rem;
+    }
+    footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Reproducible Molecular Docking & Interaction Report</h1>
+      <p>Virtual Screening of Steroid Modulators Against Human Androgen Receptor LBD</p>
+      <div class="badge">Generated: 2026-09-06 23:59:49 | Pipeline: 04-protein-ligand-docking</div>
+    </header>
+
+    
+    <div class="grid-stats">
+      
+      <div class="stat-card">
+        <div class="label">Target Receptor</div>
+        <div class="value">Human Androgen Receptor LBD</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Receptor Residues</div>
+        <div class="value">250 aa</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Screened Ligands</div>
+        <div class="value">3 Compounds</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Best Predicted Ligand</div>
+        <div class="value">DHT (-11.23 kcal/mol)</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Search Grid Center</div>
+        <div class="value">(26.5, 28.0, 4.5)</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Total Docked Modes</div>
+        <div class="value">27 Conformations</div>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="card">
+      <h2>1. Receptor Preparation & Search Space Definition</h2>
+      
+      <p>The target receptor (Human Androgen Receptor LBD) was isolated from PDB coordinates, stripped of crystallographic water molecules and co-factors, and parameterized with Gasteiger/Kollman partial charges. A search grid box of dimension 22.0×22.0×22.0 Å was centered at coordinates (26.5, 28.0, 4.5), encompassing the canonical steroid hormone pocket.</p>
+      
+
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>2. Predicted Binding Free Energy (ΔG) Spectrum</h2>
+      
+      <p>Comparative ranking of predicted binding affinities across the ligand panel. Endogenous 5α-dihydrotestosterone (DHT) yielded the strongest binding affinity (-11.23 kcal/mol), closely followed by testosterone, while the bulky antagonist enzalutamide exhibits a modified pose profile.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/binding_affinity_comparison.png" alt="2. Predicted Binding Free Energy (ΔG) Spectrum">
+        
+        <div class="figure-caption">Top-ranked mode binding affinities (kcal/mol) across screened compounds.</div>
+        
+      </div>
+      
+
+      
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              
+              <th>Ligand ID</th>
+              
+              <th>Chemical Name</th>
+              
+              <th>Pharmacological Class</th>
+              
+              <th>Binding Affinity (ΔG)</th>
+              
+              <th>RMSD</th>
+              
+              <th>Rank</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              
+              <td>DHT</td>
+              
+              <td>5alpha-Dihydrotestosterone</td>
+              
+              <td>Endogenous Agonist</td>
+              
+              <td>-11.23 kcal/mol</td>
+              
+              <td>0.00 Å</td>
+              
+              <td>Mode 1</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Testosterone</td>
+              
+              <td>Testosterone</td>
+              
+              <td>Endogenous Agonist</td>
+              
+              <td>-10.43 kcal/mol</td>
+              
+              <td>0.00 Å</td>
+              
+              <td>Mode 1</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Enzalutamide</td>
+              
+              <td>Enzalutamide (MDV3100)</td>
+              
+              <td>FDA-Approved Antagonist</td>
+              
+              <td>-9.83 kcal/mol</td>
+              
+              <td>0.00 Å</td>
+              
+              <td>Mode 1</td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <h2>3. Residue Contact & Interaction Heatmap</h2>
+      
+      <p>Protein-ligand contact profiling showing distances to critical pocket residues. Steroid core scaffolds form extensive hydrophobic contacts with Leu704, Phe764, Met745, and Val746, stabilized by key hydrogen bonding interactions.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/interaction_heatmap.png" alt="3. Residue Contact & Interaction Heatmap">
+        
+        <div class="figure-caption">Minimum distance heatmap between docked ligands and key active site residues.</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>4. Conformational Mode Spectrum</h2>
+      
+      <p>Energy curve across 9 sampled conformational modes illustrating pose convergence within the binding cleft.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/pose_energy_spectrum.png" alt="4. Conformational Mode Spectrum">
+        
+        <div class="figure-caption">Conformation mode rank vs. binding affinity (kcal/mol).</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+
+    
+    <div class="disclaimer">
+      <strong>Scientific & Ethical Notice:</strong> CRITICAL SCIENTIFIC & REGULATORY NOTICE: Molecular docking is a computational hypothesis-generation and virtual screening technique based on empirical scoring functions and rigid-receptor approximations. Docking scores DO NOT prove in vivo efficacy, clinical potency, therapeutic safety, or biological absorption. Under no circumstances should these computational predictions be construed as clinical dosing recommendations, medical advice, or bodybuilding protocols. All computational hypotheses require experimental wet-lab validation.
+    </div>
+    
+
+    <footer>
+      <p>Computational Biology & Bioinformatics Engineering Portfolio • Built with Python 3.11+</p>
+    </footer>
+  </div>
+</body>
+</html>

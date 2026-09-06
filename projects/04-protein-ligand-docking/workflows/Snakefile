@@ -1,0 +1,22 @@
+# Snakefile for Project 04: Molecular Docking Pipeline
+
+configfile: "projects/04-protein-ligand-docking/configs/docking_config.json"
+
+rule all:
+    input:
+        "projects/04-protein-ligand-docking/results/docking_affinities.csv",
+        "projects/04-protein-ligand-docking/results/interaction_contacts.csv",
+        "projects/04-protein-ligand-docking/figures/binding_affinity_comparison.png",
+        "projects/04-protein-ligand-docking/results/docking_analysis_report.html"
+
+rule run_docking_pipeline:
+    input:
+        config="projects/04-protein-ligand-docking/configs/docking_config.json",
+        receptor="projects/03-alphafold-structure-analysis/data/1e3g_human_ar_lbd.pdb"
+    output:
+        affinities="projects/04-protein-ligand-docking/results/docking_affinities.csv",
+        contacts="projects/04-protein-ligand-docking/results/interaction_contacts.csv",
+        fig_aff="projects/04-protein-ligand-docking/figures/binding_affinity_comparison.png",
+        report="projects/04-protein-ligand-docking/results/docking_analysis_report.html"
+    shell:
+        "python3 projects/04-protein-ligand-docking/src/run_docking_pipeline.py --config {input.config}"

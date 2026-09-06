@@ -1,0 +1,57 @@
+{
+  "pipeline_name": "04-protein-ligand-docking",
+  "version": "1.0.0",
+  "target_receptor": {
+    "name": "Human Androgen Receptor LBD",
+    "source_pdb": "projects/03-alphafold-structure-analysis/data/1e3g_human_ar_lbd.pdb",
+    "prepared_pdb": "data/target_ar_lbd.pdb",
+    "prepared_pdbqt": "data/target_ar_lbd.pdbqt",
+    "chain_id": "A"
+  },
+  "grid_box": {
+    "center_x": 26.5,
+    "center_y": 28.0,
+    "center_z": 4.5,
+    "size_x": 22.0,
+    "size_y": 22.0,
+    "size_z": 22.0,
+    "spacing": 0.375
+  },
+  "docking_parameters": {
+    "exhaustiveness": 8,
+    "num_modes": 9,
+    "energy_range": 3.0,
+    "random_seed": 42
+  },
+  "ligands": [
+    {
+      "id": "DHT",
+      "name": "5alpha-Dihydrotestosterone",
+      "pubchem_cid": 10635,
+      "smiles": "CC12CCC3C(C1CCC2O)CCC4C3(CCC(=O)C4)C",
+      "type": "Endogenous Agonist",
+      "molecular_weight": 290.44
+    },
+    {
+      "id": "Enzalutamide",
+      "name": "Enzalutamide (MDV3100)",
+      "pubchem_cid": 15951529,
+      "smiles": "CC1(C(=O)N(C(=S)N1C2=CC(=C(C=C2)C#N)C(F)(F)F)C3=CC(=C(C=C3)C(=O)NC)F)C",
+      "type": "FDA-Approved Antagonist",
+      "molecular_weight": 464.44
+    },
+    {
+      "id": "Testosterone",
+      "name": "Testosterone",
+      "pubchem_cid": 6010,
+      "smiles": "CC12CCC3C(C1CCC2O)CCC4=CC(=O)CCC34C",
+      "type": "Endogenous Agonist",
+      "molecular_weight": 288.42
+    }
+  ],
+  "outputs": {
+    "results_dir": "results",
+    "figures_dir": "figures",
+    "poses_dir": "results/poses"
+  }
+}

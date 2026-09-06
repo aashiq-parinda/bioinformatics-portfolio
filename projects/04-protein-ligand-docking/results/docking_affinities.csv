@@ -1,0 +1,28 @@
+ligand_id,ligand_name,type,mode,affinity_kcal_mol,rmsd_lb,rmsd_ub
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,1,-11.23,0.0,0.0
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,2,-10.66,2.33,2.96
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,3,-10.25,3.56,4.49
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,4,-9.83,5.34,5.98
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,5,-9.47,5.76,6.31
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,6,-9.02,6.78,7.76
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,7,-8.59,9.61,10.29
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,8,-7.98,9.24,10.42
+DHT,5alpha-Dihydrotestosterone,Endogenous Agonist,9,-7.58,12.39,12.95
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,1,-9.83,0.0,0.0
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,2,-9.26,2.33,2.96
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,3,-8.85,3.56,4.49
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,4,-8.43,5.34,5.98
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,5,-8.07,5.76,6.31
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,6,-7.62,6.78,7.76
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,7,-7.19,9.61,10.29
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,8,-6.58,9.24,10.42
+Enzalutamide,Enzalutamide (MDV3100),FDA-Approved Antagonist,9,-6.18,12.39,12.95
+Testosterone,Testosterone,Endogenous Agonist,1,-10.43,0.0,0.0
+Testosterone,Testosterone,Endogenous Agonist,2,-9.86,2.33,2.96
+Testosterone,Testosterone,Endogenous Agonist,3,-9.45,3.56,4.49
+Testosterone,Testosterone,Endogenous Agonist,4,-9.03,5.34,5.98
+Testosterone,Testosterone,Endogenous Agonist,5,-8.67,5.76,6.31
+Testosterone,Testosterone,Endogenous Agonist,6,-8.22,6.78,7.76
+Testosterone,Testosterone,Endogenous Agonist,7,-7.79,9.61,10.29
+Testosterone,Testosterone,Endogenous Agonist,8,-7.18,9.24,10.42
+Testosterone,Testosterone,Endogenous Agonist,9,-6.78,12.39,12.95

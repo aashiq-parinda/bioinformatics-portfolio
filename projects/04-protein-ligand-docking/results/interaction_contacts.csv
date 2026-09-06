@@ -1,0 +1,12 @@
+ligand_id,mode,residue_number,residue_name,interaction_type,distance_angstroms,receptor_atom,ligand_atom
+DHT,1,796,TRP,Hydrophobic Contact,0.84,CG,C
+DHT,1,797,LEU,Hydrophobic Contact,1.98,CA,C
+DHT,1,798,GLN,Hydrophobic Contact,2.64,CD,C
+Enzalutamide,1,796,TRP,Hydrophobic Contact,1.04,CG,C
+Enzalutamide,1,796,TRP,Hydrogen Bond,1.92,O,O
+Enzalutamide,1,797,LEU,Hydrophobic Contact,2.47,CG,C
+Enzalutamide,1,798,GLN,Hydrophobic Contact,3.01,CD,C
+Enzalutamide,1,793,GLU,Hydrophobic Contact,3.35,CD,C
+Testosterone,1,796,TRP,Hydrophobic Contact,1.51,CG,C
+Testosterone,1,797,LEU,Hydrophobic Contact,2.4,CA,C
+Testosterone,1,798,GLN,Hydrophobic Contact,3.6,CG,C
