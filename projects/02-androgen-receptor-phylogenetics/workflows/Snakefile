@@ -1,0 +1,25 @@
+# Snakefile for Project 02: Androgen Receptor Phylogenetics Pipeline
+
+configfile: "projects/02-androgen-receptor-phylogenetics/configs/pipeline_config.json"
+
+rule all:
+    input:
+        "projects/02-androgen-receptor-phylogenetics/results/ar_vertebrates_aligned.fasta",
+        "projects/02-androgen-receptor-phylogenetics/results/per_residue_conservation.csv",
+        "projects/02-androgen-receptor-phylogenetics/results/ar_phylogenetic_tree.nwk",
+        "projects/02-androgen-receptor-phylogenetics/figures/phylogenetic_tree.png",
+        "projects/02-androgen-receptor-phylogenetics/results/phylogenetic_analysis_report.html"
+
+rule run_phylogenetic_pipeline:
+    input:
+        fasta="projects/02-androgen-receptor-phylogenetics/data/vertebrate_ar_orthologs.fasta",
+        metadata="projects/02-androgen-receptor-phylogenetics/data/species_metadata.csv",
+        config="projects/02-androgen-receptor-phylogenetics/configs/pipeline_config.json"
+    output:
+        aln="projects/02-androgen-receptor-phylogenetics/results/ar_vertebrates_aligned.fasta",
+        cons="projects/02-androgen-receptor-phylogenetics/results/per_residue_conservation.csv",
+        tree="projects/02-androgen-receptor-phylogenetics/results/ar_phylogenetic_tree.nwk",
+        fig_tree="projects/02-androgen-receptor-phylogenetics/figures/phylogenetic_tree.png",
+        report="projects/02-androgen-receptor-phylogenetics/results/phylogenetic_analysis_report.html"
+    shell:
+        "python3 projects/02-androgen-receptor-phylogenetics/src/run_pipeline.py --config {input.config}"

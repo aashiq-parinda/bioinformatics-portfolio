@@ -1,0 +1,33 @@
+{
+  "pipeline_name": "02-androgen-receptor-phylogenetics",
+  "version": "1.0.0",
+  "input_fasta": "data/vertebrate_ar_orthologs.fasta",
+  "metadata_csv": "data/species_metadata.csv",
+  "alignment": {
+    "preferred_tool": "mafft",
+    "fallback_to_internal": true,
+    "gap_open_penalty": 1.53,
+    "gap_extend_penalty": 0.123
+  },
+  "conservation": {
+    "entropy_threshold_conserved": 0.2,
+    "entropy_threshold_variable": 1.0,
+    "sliding_window_size": 9
+  },
+  "phylogeny": {
+    "method": "neighbor_joining",
+    "distance_model": "kimura_protein",
+    "bootstrap_replicates": 1000,
+    "random_seed": 42
+  },
+  "domain_annotation": {
+    "DBD": {"name": "DNA-Binding Domain", "start_col": 1, "end_col": 75},
+    "Hinge": {"name": "Hinge Region", "start_col": 76, "end_col": 120},
+    "LBD": {"name": "Ligand-Binding Domain", "start_col": 121, "end_col": 372}
+  },
+  "outputs": {
+    "results_dir": "results",
+    "figures_dir": "figures",
+    "generate_html": true
+  }
+}

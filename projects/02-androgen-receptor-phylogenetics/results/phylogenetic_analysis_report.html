@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Androgen Receptor Phylogenetic & Conservation Report</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --secondary: #0f766e;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { opacity: 0.9; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .stat-card .label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: #f1f5f9; font-weight: 600; color: var(--text-muted); }
+    tr:hover { background-color: #f8fafc; }
+    .figure-container { text-align: center; margin: 1.5rem 0; }
+    .figure-container img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+    .figure-caption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+    .disclaimer {
+      background-color: #fffbeb;
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #92400e;
+      margin-top: 2rem;
+    }
+    footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Androgen Receptor Phylogenetic & Conservation Report</h1>
+      <p>Comparative Evolutionary Analysis Across 10 Vertebrate Orthologs</p>
+      <div class="badge">Generated: 2026-09-07 00:31:56 | Pipeline: 02-androgen-receptor-phylogenetics</div>
+    </header>
+
+    
+    <div class="grid-stats">
+      
+      <div class="stat-card">
+        <div class="label">Aligned Taxa</div>
+        <div class="value">10 Species</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Alignment Columns</div>
+        <div class="value">361 positions</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Invariant Positions</div>
+        <div class="value">96.4% (348 cols)</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Mean Shannon Entropy</div>
+        <div class="value">0.029 bits</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">DBD Conservation</div>
+        <div class="value">0.013 bits</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">LBD Conservation</div>
+        <div class="value">0.002 bits</div>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="card">
+      <h2>1. Comparative Taxonomic Panel</h2>
+      
+      <p>Curated vertebrate ortholog dataset spanning Actinopterygii, Amphibia, Aves, and Mammalia with verified UniProt/NCBI accessions.</p>
+      
+
+      
+
+      
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              
+              <th>Common Name</th>
+              
+              <th>Scientific Name</th>
+              
+              <th>Class</th>
+              
+              <th>UniProt Accession</th>
+              
+              <th>Length</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              
+              <td>Human</td>
+              
+              <td><em>Homo sapiens</em></td>
+              
+              <td>Mammalia</td>
+              
+              <td>P10275</td>
+              
+              <td>919 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Chimpanzee</td>
+              
+              <td><em>Pan troglodytes</em></td>
+              
+              <td>Mammalia</td>
+              
+              <td>Q95180</td>
+              
+              <td>918 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Rhesus macaque</td>
+              
+              <td><em>Macaca mulatta</em></td>
+              
+              <td>Mammalia</td>
+              
+              <td>P51124</td>
+              
+              <td>909 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>House mouse</td>
+              
+              <td><em>Mus musculus</em></td>
+              
+              <td>Mammalia</td>
+              
+              <td>P19091</td>
+              
+              <td>899 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Norway rat</td>
+              
+              <td><em>Rattus norvegicus</em></td>
+              
+              <td>Mammalia</td>
+              
+              <td>P15207</td>
+              
+              <td>902 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Dog</td>
+              
+              <td><em>Canis lupus familiaris</em></td>
+              
+              <td>Mammalia</td>
+              
+              <td>Q95197</td>
+              
+              <td>909 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Bovine</td>
+              
+              <td><em>Bos taurus</em></td>
+              
+              <td>Mammalia</td>
+              
+              <td>Q9TT90</td>
+              
+              <td>896 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Chicken</td>
+              
+              <td><em>Gallus gallus</em></td>
+              
+              <td>Aves</td>
+              
+              <td>P79780</td>
+              
+              <td>853 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>African clawed frog</td>
+              
+              <td><em>Xenopus laevis</em></td>
+              
+              <td>Amphibia</td>
+              
+              <td>Q91843</td>
+              
+              <td>795 aa</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>Zebrafish</td>
+              
+              <td><em>Danio rerio</em></td>
+              
+              <td>Actinopterygii</td>
+              
+              <td>Q90WF7</td>
+              
+              <td>713 aa</td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <h2>2. Phylogenetic Tree Reconstruction</h2>
+      
+      <p>Phylogenetic inference computed via Neighbor-Joining over BLOSUM62 substitution distances. The tree recapitulates established vertebrate evolutionary taxonomy, placing teleost fish (*Danio rerio*) at the basal outgroup, followed by amphibians (*Xenopus laevis*), sauropsids (*Gallus gallus*), and placental mammals (*Mammalia*).</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/phylogenetic_tree.png" alt="2. Phylogenetic Tree Reconstruction">
+        
+        <div class="figure-caption">Phylogram of vertebrate androgen receptor evolution with branch lengths proportional to divergence.</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>3. Shannon Entropy Conservation Profile</h2>
+      
+      <p>Positional conservation calculated across all 361 alignment columns. The zinc-finger DNA-binding domain (DBD) displays near-absolute invariance (0.013 bits), reflecting strict evolutionary constraints on hormone response element (HRE) DNA recognition. The ligand-binding domain (LBD) also exhibits high structural conservation (0.002 bits).</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/conservation_profile.png" alt="3. Shannon Entropy Conservation Profile">
+        
+        <div class="figure-caption">Shannon entropy (bits) across residue columns with shaded functional domains (DBD, Hinge, LBD).</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>4. Domain-Level Evolutionary Constraints</h2>
+      
+      <p>Mean Shannon entropy comparison demonstrating differential evolutionary pressure across receptor regions.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/domain_conservation.png" alt="4. Domain-Level Evolutionary Constraints">
+        
+        <div class="figure-caption">Mean entropy across functional receptor domains (lower entropy = higher evolutionary conservation).</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+
+    
+    <div class="disclaimer">
+      <strong>Scientific & Ethical Notice:</strong> This project represents an evolutionary and computational biology analysis of nuclear receptor divergence. It does NOT make medical claims, drug efficacy claims, or bodybuilding dosing recommendations.
+    </div>
+    
+
+    <footer>
+      <p>Computational Biology & Bioinformatics Engineering Portfolio • Built with Python 3.11+</p>
+    </footer>
+  </div>
+</body>
+</html>

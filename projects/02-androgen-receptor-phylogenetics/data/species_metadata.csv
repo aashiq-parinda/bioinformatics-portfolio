@@ -1,0 +1,11 @@
+accession,uniprot_id,organism,common_name,taxonomic_class,sequence_length
+P10275,ANDR_HUMAN,Homo sapiens,Human,Mammalia,919
+Q95180,ANDR_PANTR,Pan troglodytes,Chimpanzee,Mammalia,918
+P51124,ANDR_MACMU,Macaca mulatta,Rhesus macaque,Mammalia,909
+P19091,ANDR_MOUSE,Mus musculus,House mouse,Mammalia,899
+P15207,ANDR_RAT,Rattus norvegicus,Norway rat,Mammalia,902
+Q95197,ANDR_CANLF,Canis lupus familiaris,Dog,Mammalia,909
+Q9TT90,ANDR_BOVIN,Bos taurus,Bovine,Mammalia,896
+P79780,ANDR_CHICK,Gallus gallus,Chicken,Aves,853
+Q91843,ANDR_XENLA,Xenopus laevis,African clawed frog,Amphibia,795
+Q90WF7,ANDR_DANRE,Danio rerio,Zebrafish,Actinopterygii,713
