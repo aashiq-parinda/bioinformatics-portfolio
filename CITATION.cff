@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use or adapt workflows, code, or benchmarks from this portfolio in your research or pipelines, please cite it as below."
+title: "Computational Biology & Bioinformatics Engineering Portfolio"
+version: 1.0.0
+date-released: 2026-01-15
+license: MIT
+repository-code: "https://github.com/example/bioinformatics-portfolio"
+keywords:
+  - bioinformatics
+  - computational-biology
+  - phylogenetics
+  - structural-biology
+  - alphafold
+  - molecular-docking
+  - rna-seq
+  - scientific-software-engineering
+authors:
+  - family-names: "Engineer"
+    given-names: "Bioinformatics"
+    orcid: "https://orcid.org/0000-0000-0000-0000"

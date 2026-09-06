@@ -1,0 +1,85 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE / Editor artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Linting and type checking
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Workflow engines
+.snakemake/
+.nextflow/
+.nextflow.log*
+work/
+
+# Large binary / intermediate bioinformatics outputs
+*.bam
+*.bai
+*.sam
+*.fq.gz
+*.fastq.gz
+*.bigWig
+*.bw
+*.bed.gz
+*.vcf.gz
+*.tar.gz
+*.zip
+*.h5
+*.h5ad
+*.pdbqt_tmp
+
+# Sensitive information
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
