@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "analysis_date": "2026-09-06T22:43:05.704519",
+    "pipeline": "bioseq-homology-v1.0"
+  },
+  "sequence_statistics": {
+    "sequence_id": "sp|P01308|INS_HUMAN",
+    "description": "sp|P01308|INS_HUMAN Insulin OS=Homo sapiens OX=9606 GN=INS PE=1 SV=1",
+    "length": 110,
+    "molecular_weight_da": 11980.79,
+    "isoelectric_point": 5.22,
+    "gravy_hydropathy": 0.193,
+    "aromaticity": 0.082,
+    "instability_index": 40.33,
+    "is_stable": false,
+    "amino_acid_composition_pct": {
+      "A": 909.09,
+      "C": 545.45,
+      "D": 181.82,
+      "E": 727.27,
+      "F": 272.73,
+      "G": 1090.91,
+      "H": 181.82,
+      "I": 181.82,
+      "K": 181.82,
+      "L": 1818.18,
+      "M": 181.82,
+      "N": 272.73,
+      "P": 545.45,
+      "Q": 636.36,
+      "R": 454.55,
+      "S": 454.55,
+      "T": 272.73,
+      "V": 545.45,
+      "W": 181.82,
+      "Y": 363.64
+    },
+    "extinction_coefficient_reduced": 16960,
+    "extinction_coefficient_cystines": 17335
+  },
+  "blast_hits_count": 0
+}

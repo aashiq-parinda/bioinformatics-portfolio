@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "analysis_date": "2026-09-07T00:22:21.843136",
+    "pipeline": "bioseq-homology-v1.0"
+  },
+  "sequence_statistics": {
+    "sequence_id": "sp|P10275|ANDR_HUMAN",
+    "description": "sp|P10275|ANDR_HUMAN Androgen receptor OS=Homo sapiens OX=9606 GN=AR PE=1 SV=2",
+    "length": 919,
+    "molecular_weight_da": 98987.56,
+    "isoelectric_point": 6.01,
+    "gravy_hydropathy": -0.432,
+    "aromaticity": 0.075,
+    "instability_index": 56.54,
+    "is_stable": false,
+    "amino_acid_composition_pct": {
+      "A": 881.39,
+      "C": 293.8,
+      "D": 402.61,
+      "E": 598.48,
+      "F": 304.68,
+      "G": 1055.5,
+      "H": 206.75,
+      "I": 250.27,
+      "K": 435.26,
+      "L": 946.68,
+      "M": 239.39,
+      "N": 217.63,
+      "P": 805.22,
+      "Q": 750.82,
+      "R": 446.14,
+      "S": 881.39,
+      "T": 402.61,
+      "V": 435.26,
+      "W": 87.05,
+      "Y": 359.09
+    },
+    "extinction_coefficient_reduced": 93170,
+    "extinction_coefficient_cystines": 94795
+  },
+  "blast_hits_count": 0
+}

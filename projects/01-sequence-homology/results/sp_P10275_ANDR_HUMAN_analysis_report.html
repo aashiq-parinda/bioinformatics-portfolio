@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sequence & Homology Report: sp|P10275|ANDR_HUMAN</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --secondary: #0f766e;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { opacity: 0.9; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .stat-card .label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: #f1f5f9; font-weight: 600; color: var(--text-muted); }
+    tr:hover { background-color: #f8fafc; }
+    .figure-container { text-align: center; margin: 1.5rem 0; }
+    .figure-container img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+    .figure-caption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+    .disclaimer {
+      background-color: #fffbeb;
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #92400e;
+      margin-top: 2rem;
+    }
+    footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sequence & Homology Report: sp|P10275|ANDR_HUMAN</h1>
+      <p>sp|P10275|ANDR_HUMAN Androgen receptor OS=Homo sapiens OX=9606 GN=AR PE=1 SV=2</p>
+      <div class="badge">Generated: 2026-09-07 00:22:22 | Pipeline: bioseq analyze & blast</div>
+    </header>
+
+    
+    <div class="grid-stats">
+      
+      <div class="stat-card">
+        <div class="label">Sequence Length</div>
+        <div class="value">919 aa</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Molecular Weight</div>
+        <div class="value">99.0 kDa</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Isoelectric Point (pI)</div>
+        <div class="value">6.01</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">GRAVY Hydropathy</div>
+        <div class="value">-0.432</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Aromaticity</div>
+        <div class="value">0.075</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Instability Index</div>
+        <div class="value">56.5 (Unstable)</div>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="card">
+      <h2>1. Physicochemical Properties & Hydropathy</h2>
+      
+      <p>Protein identifier <strong>sp|P10275|ANDR_HUMAN</strong>: sp|P10275|ANDR_HUMAN Androgen receptor OS=Homo sapiens OX=9606 GN=AR PE=1 SV=2. The sequence possesses a computed molecular weight of 98987.56 Da and a theoretical isoelectric point of 6.01. The GRAVY index of -0.432 characterizes the overall hydropathic nature.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/hydropathy_profile.png" alt="1. Physicochemical Properties & Hydropathy">
+        
+        <div class="figure-caption">Sliding window hydropathy profile (Kyte-Doolittle scale, window size = 9).</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>2. Amino Acid Residue Composition</h2>
+      
+      <p>Relative frequency distribution of standard amino acid residues.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/amino_acid_composition.png" alt="2. Amino Acid Residue Composition">
+        
+        <div class="figure-caption">Per-residue percentage frequency distribution.</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>3. Homology & BLAST Analysis Summary</h2>
+      
+      <p>A total of 0 homologous sequences met all identity and E-value significance cutoffs.</p>
+      
+
+      
+
+      
+    </div>
+    
+
+    
+    <div class="disclaimer">
+      <strong>Scientific & Ethical Notice:</strong> Computational sequence analysis is provided for scientific research and hypothesis generation only.
+    </div>
+    
+
+    <footer>
+      <p>Computational Biology & Bioinformatics Engineering Portfolio • Built with Python 3.11+</p>
+    </footer>
+  </div>
+</body>
+</html>

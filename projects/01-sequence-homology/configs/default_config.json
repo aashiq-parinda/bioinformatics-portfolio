@@ -1,0 +1,28 @@
+{
+  "pipeline": "01-sequence-homology",
+  "version": "1.0.0",
+  "blast_parameters": {
+    "program": "blastp",
+    "remote_database": "swissprot",
+    "evalue_threshold": 1e-5,
+    "matrix": "BLOSUM62",
+    "gap_open": 11,
+    "gap_extend": 1,
+    "max_hits": 25
+  },
+  "filtering_thresholds": {
+    "min_identity_pct": 30.0,
+    "min_query_coverage_pct": 40.0,
+    "max_evalue": 1e-5
+  },
+  "sequence_analysis": {
+    "hydropathy_window_size": 9,
+    "hydropathy_scale": "Kyte-Doolittle"
+  },
+  "reporting": {
+    "save_json": true,
+    "save_csv": true,
+    "generate_html": true,
+    "dpi": 300
+  }
+}
