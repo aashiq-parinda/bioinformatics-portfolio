@@ -1,0 +1,31 @@
+# UCSF ChimeraX Script: Human Androgen Receptor AlphaFold & Crystal Superposition
+# Usage in ChimeraX: open visualize_ar_structure.cxc
+
+# Open structures
+open ../data/1e3g_human_ar_lbd.pdb
+open ../data/af_p10275_human_ar.pdb
+
+# Style and appearance
+lighting soft
+graphics silhouettes true
+
+# Color AlphaFold structure by b-factor (pLDDT)
+# Blue (>90), Cyan (70-90), Yellow (50-70), Orange (<50)
+color #2 bfactor palette 0,#FF7D45:50,#FFDB13:70,#65CBF3:90,#0053D6:100
+
+# Color experimental crystal structure gray
+color #1 gray(180)
+
+# Align AlphaFold LBD onto experimental structure
+matchmaker #2/A:676-919 to #1/A
+
+# Show ligand DHT
+show #1:DHT sticks
+color #1:DHT green
+
+# Show key binding site residues
+show #1:705,877,764,745,704,711 sticks
+color #1:705,877,764,745,704,711 magenta
+
+# Camera zoom
+view #1:DHT

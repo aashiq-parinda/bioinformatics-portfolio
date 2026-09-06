@@ -1,0 +1,31 @@
+{
+  "pipeline_name": "03-alphafold-structure-analysis",
+  "version": "1.0.0",
+  "inputs": {
+    "alphafold_pdb": "data/af_p10275_human_ar.pdb",
+    "crystal_pdb": "data/1e3g_human_ar_lbd.pdb",
+    "target_protein": "Human Androgen Receptor",
+    "uniprot_accession": "P10275",
+    "pdb_id": "1E3G"
+  },
+  "confidence_thresholds": {
+    "very_high": 90.0,
+    "confident": 70.0,
+    "low": 50.0
+  },
+  "domains": {
+    "NTD": {"name": "N-Terminal Domain (Transactivation)", "start": 1, "end": 555},
+    "DBD": {"name": "DNA-Binding Domain", "start": 556, "end": 623},
+    "Hinge": {"name": "Hinge Region", "start": 624, "end": 675},
+    "LBD": {"name": "Ligand-Binding Domain", "start": 676, "end": 919}
+  },
+  "pocket_definition": {
+    "ligand_resname": "R18",
+    "contact_cutoff_angstroms": 4.5
+  },
+  "outputs": {
+    "results_dir": "results",
+    "figures_dir": "figures",
+    "generate_html": true
+  }
+}

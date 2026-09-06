@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "target": "Human Androgen Receptor",
+    "uniprot": "P10275",
+    "pdb_id": "1E3G",
+    "analysis_time": "2026-09-06T23:50:57.295608"
+  },
+  "confidence_summary": {
+    "total_residues": 920,
+    "mean_plddt": 57.25,
+    "median_plddt": 40.0,
+    "pct_very_high": 27.0,
+    "pct_confident": 11.0,
+    "pct_low": 3.9,
+    "pct_very_low": 58.2,
+    "domain_metrics": {
+      "DBD": {
+        "mean_plddt": 88.56,
+        "median_plddt": 91.75,
+        "pct_disorder": 2.9,
+        "residue_count": 68
+      },
+      "Hinge": {
+        "mean_plddt": 44.06,
+        "median_plddt": 37.14,
+        "pct_disorder": 78.8,
+        "residue_count": 52
+      },
+      "LBD": {
+        "mean_plddt": 93.37,
+        "median_plddt": 94.47,
+        "pct_disorder": 0.0,
+        "residue_count": 244
+      },
+      "NTD": {
+        "mean_plddt": 38.77,
+        "median_plddt": 34.53,
+        "pct_disorder": 88.6,
+        "residue_count": 555
+      },
+      "Unannotated": {
+        "mean_plddt": 59.59,
+        "median_plddt": 59.59,
+        "pct_disorder": 0.0,
+        "residue_count": 1
+      }
+    }
+  },
+  "secondary_structure_percentages": {
+    "Alpha-Helix": 36.0,
+    "Beta-Sheet": 38.5,
+    "Loop / Coil": 23.7
+  },
+  "superposition_rmsd_angstroms": 3.77,
+  "aligned_ca_atoms": 243,
+  "pocket_residues_count": 20
+}
