@@ -1,0 +1,7 @@
+term_id,pathway_name,category,overlap_count,pathway_size,fold_enrichment,p_value,neg_log10_p,overlapping_genes
+KEGG:05215,Androgen Receptor Signaling Pathway,KEGG Pathway,10,10,19.54,2.157065084407912e-14,13.67,"ABCC4, ELL2, FKBP5, KLK3, NDRG1, NKX3-1, SLC45A3, STEAP1, STEAP2, TMPRSS2"
+HALLMARK:01,Androgen Response Hallmark,MSigDB Hallmark,8,9,17.37,1.4326079640250376e-10,9.84,"ACSL3, FKBP5, KLK3, NDRG1, NKX3-1, SLC45A3, STEAP1, TMPRSS2"
+GO:0048545,Response to Steroid Hormone,Gene Ontology BP,8,10,15.63,6.926489251184541e-10,9.16,"BCL2, FKBP5, FOXA1, IGF1R, KLK3, NKX3-1, SLC45A3, TMPRSS2"
+GO:0006629,Lipid Metabolic Process,Gene Ontology BP,6,6,19.54,1.0408777923228601e-08,7.98,"ACSL3, GUCY1A3, MAOA, PPAP2A, SEC14L2, STEAP1"
+GO:0006915,Regulation of Apoptosis,Gene Ontology BP,4,5,15.63,2.676673812403469e-05,4.57,"BCL2, CDKN1A, IGFBP3, IL6"
+GO:0008283,Cell Proliferation & Growth Control,Gene Ontology BP,3,8,7.33,0.005676631872857569,2.25,"CCND1, CDKN1A, IGF1R"

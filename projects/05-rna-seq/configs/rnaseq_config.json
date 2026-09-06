@@ -1,0 +1,35 @@
+{
+  "pipeline_name": "05-rna-seq",
+  "version": "1.0.0",
+  "dataset_metadata": {
+    "source_study": "NCBI GEO: GSE153664",
+    "organism": "Homo sapiens",
+    "cell_line": "Human Hormone-Responsive Muscle / AR Active Cell Model",
+    "sequencing_platform": "Illumina NovaSeq 6000 (Paired-End 150bp)",
+    "design": "Two-group comparison (Control vs Androgen / DHT Treated, n=3 replicates each)"
+  },
+  "inputs": {
+    "counts_matrix": "data/raw_counts_matrix.tsv",
+    "sample_metadata": "data/sample_metadata.csv"
+  },
+  "experimental_design": {
+    "contrast_factor": "condition",
+    "target_level": "Treated",
+    "reference_level": "Control"
+  },
+  "statistical_cutoffs": {
+    "fdr_threshold": 0.05,
+    "log2fc_threshold": 1.0,
+    "min_count_filter": 10
+  },
+  "pathway_enrichment": {
+    "min_gene_set_size": 3,
+    "max_gene_set_size": 500,
+    "p_value_cutoff": 0.05
+  },
+  "outputs": {
+    "results_dir": "results",
+    "figures_dir": "figures",
+    "generate_html": true
+  }
+}

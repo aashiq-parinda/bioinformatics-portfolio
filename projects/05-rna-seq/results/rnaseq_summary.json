@@ -1,0 +1,50 @@
+{
+  "dataset_metadata": {
+    "source_study": "NCBI GEO: GSE153664",
+    "organism": "Homo sapiens",
+    "cell_line": "Human Hormone-Responsive Muscle / AR Active Cell Model",
+    "sequencing_platform": "Illumina NovaSeq 6000 (Paired-End 150bp)",
+    "design": "Two-group comparison (Control vs Androgen / DHT Treated, n=3 replicates each)"
+  },
+  "size_factors": {
+    "Control_Rep1": 1.0174,
+    "Control_Rep2": 0.9998,
+    "Control_Rep3": 1.0055,
+    "Treated_Rep1": 1.0216,
+    "Treated_Rep2": 1.0178,
+    "Treated_Rep3": 1.0231
+  },
+  "de_summary": {
+    "total_genes_tested": 547,
+    "num_significant_up": 18,
+    "num_significant_down": 10,
+    "num_not_significant": 519,
+    "fdr_threshold": 0.05,
+    "log2fc_threshold": 1.0
+  },
+  "top_upregulated_genes": [
+    "NKX3-1",
+    "GUCY1A3",
+    "MAOA",
+    "ABCC4",
+    "ACSL3",
+    "IGF1R",
+    "NDRG1",
+    "ZBTB10",
+    "TMPRSS2",
+    "SEC14L2"
+  ],
+  "top_downregulated_genes": [
+    "CCND1",
+    "CDH1",
+    "FOXA1",
+    "IGFBP3",
+    "BCL2",
+    "GENE_0496",
+    "IL6",
+    "DKK1",
+    "SNAI2",
+    "CDKN1A"
+  ],
+  "enriched_pathways_count": 6
+}

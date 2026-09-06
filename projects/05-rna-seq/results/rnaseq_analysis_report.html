@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>End-to-End RNA-Seq Differential Expression Report</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #3b82f6;
+      --secondary: #0f766e;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { opacity: 0.9; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .stat-card .label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: #f1f5f9; font-weight: 600; color: var(--text-muted); }
+    tr:hover { background-color: #f8fafc; }
+    .figure-container { text-align: center; margin: 1.5rem 0; }
+    .figure-container img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+    .figure-caption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+    .disclaimer {
+      background-color: #fffbeb;
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #92400e;
+      margin-top: 2rem;
+    }
+    footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>End-to-End RNA-Seq Differential Expression Report</h1>
+      <p>Hormone Response Transcriptomics (NCBI GEO: GSE153664)</p>
+      <div class="badge">Generated: 2026-09-07 00:16:34 | Pipeline: 05-rna-seq</div>
+    </header>
+
+    
+    <div class="grid-stats">
+      
+      <div class="stat-card">
+        <div class="label">Sequencing Samples</div>
+        <div class="value">6 Libraries (3 vs 3)</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Genes Quantified</div>
+        <div class="value">547 Genes</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Significant Up-Regulated</div>
+        <div class="value">18 Genes</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Significant Down-Regulated</div>
+        <div class="value">10 Genes</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">FDR Significance Cutoff</div>
+        <div class="value">padj < 0.05</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="label">Fold Change Threshold</div>
+        <div class="value">|log2FC| >= 1.0</div>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="card">
+      <h2>1. Study Design & Sample Separation (PCA)</h2>
+      
+      <p>Transcriptomic profiling of NCBI GEO: GSE153664 evaluating the hormonal response in Homo sapiens. Principal Component Analysis of the top 500 variable genes demonstrates sharp separation along PC1 between Vehicle Control and Androgen-Treated replicates, verifying robust transcriptional reprogramming.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/pca_plot.png" alt="1. Study Design & Sample Separation (PCA)">
+        
+        <div class="figure-caption">Principal Component Analysis (PCA) demonstrating clear condition-based clustering.</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>2. Differential Expression Landscape (Volcano Plot)</h2>
+      
+      <p>Negative Binomial generalized linear model testing identified 18 up-regulated and 10 down-regulated genes. Canonical AR downstream effectors (<em>KLK3</em>, <em>FKBP5</em>, <em>TMPRSS2</em>, <em>NKX3-1</em>) exhibit dramatic transcriptional induction, while proliferative oncogenes such as <em>MYC</em> are suppressed.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/volcano_plot.png" alt="2. Differential Expression Landscape (Volcano Plot)">
+        
+        <div class="figure-caption">Volcano plot (-log10 FDR vs log2 Fold Change) highlighting key androgen responsive transcripts.</div>
+        
+      </div>
+      
+
+      
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              
+              <th>Gene Symbol</th>
+              
+              <th>Base Mean</th>
+              
+              <th>log2(Fold Change)</th>
+              
+              <th>p-value</th>
+              
+              <th>FDR (padj)</th>
+              
+              <th>Status</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              
+              <td><strong>NKX3-1</strong></td>
+              
+              <td>893.6</td>
+              
+              <td>+2.58</td>
+              
+              <td>4.84e-49</td>
+              
+              <td>2.65e-46</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>GUCY1A3</strong></td>
+              
+              <td>150.0</td>
+              
+              <td>+2.34</td>
+              
+              <td>4.37e-40</td>
+              
+              <td>1.20e-37</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>MAOA</strong></td>
+              
+              <td>202.9</td>
+              
+              <td>+1.85</td>
+              
+              <td>1.42e-25</td>
+              
+              <td>2.58e-23</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>ABCC4</strong></td>
+              
+              <td>1853.1</td>
+              
+              <td>+2.67</td>
+              
+              <td>4.22e-18</td>
+              
+              <td>5.76e-16</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>ACSL3</strong></td>
+              
+              <td>240.8</td>
+              
+              <td>+2.23</td>
+              
+              <td>1.60e-17</td>
+              
+              <td>1.76e-15</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>IGF1R</strong></td>
+              
+              <td>274.7</td>
+              
+              <td>+1.81</td>
+              
+              <td>2.85e-14</td>
+              
+              <td>2.60e-12</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>NDRG1</strong></td>
+              
+              <td>319.2</td>
+              
+              <td>+1.54</td>
+              
+              <td>9.04e-13</td>
+              
+              <td>7.06e-11</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>ZBTB10</strong></td>
+              
+              <td>150.8</td>
+              
+              <td>+2.44</td>
+              
+              <td>5.22e-12</td>
+              
+              <td>3.57e-10</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>TMPRSS2</strong></td>
+              
+              <td>172.4</td>
+              
+              <td>+2.71</td>
+              
+              <td>8.02e-12</td>
+              
+              <td>4.87e-10</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td><strong>SEC14L2</strong></td>
+              
+              <td>215.9</td>
+              
+              <td>+1.24</td>
+              
+              <td>1.26e-11</td>
+              
+              <td>6.87e-10</td>
+              
+              <td><span style='color: #dc2626; font-weight: bold;'>Up-regulated</span></td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+    
+    <div class="card">
+      <h2>3. Clustered Expression Heatmap</h2>
+      
+      <p>Hierarchically clustered Z-score heatmap of top 25 differentially expressed genes.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/expression_heatmap.png" alt="3. Clustered Expression Heatmap">
+        
+        <div class="figure-caption">Standardized expression profiles across biological replicates.</div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+    <div class="card">
+      <h2>4. Functional Pathway & Gene Ontology Enrichment</h2>
+      
+      <p>Over-Representation Analysis (ORA) confirms significant enrichment for the androgen receptor signaling pathway and steroid hormone response networks.</p>
+      
+
+      
+      <div class="figure-container">
+        <img src="figures/pathway_enrichment_bars.png" alt="4. Functional Pathway & Gene Ontology Enrichment">
+        
+        <div class="figure-caption">Top enriched Gene Ontology terms and KEGG pathways.</div>
+        
+      </div>
+      
+
+      
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              
+              <th>Term ID</th>
+              
+              <th>Pathway Name</th>
+              
+              <th>Category</th>
+              
+              <th>Overlap</th>
+              
+              <th>p-value</th>
+              
+              <th>Top Genes</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              
+              <td>KEGG:05215</td>
+              
+              <td>Androgen Receptor Signaling Pathway</td>
+              
+              <td>KEGG Pathway</td>
+              
+              <td>10 / 10</td>
+              
+              <td>2.16e-14</td>
+              
+              <td>ABCC4, ELL2, FKBP5, KLK3, NDRG1, NK...</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>HALLMARK:01</td>
+              
+              <td>Androgen Response Hallmark</td>
+              
+              <td>MSigDB Hallmark</td>
+              
+              <td>8 / 9</td>
+              
+              <td>1.43e-10</td>
+              
+              <td>ACSL3, FKBP5, KLK3, NDRG1, NKX3-1, ...</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>GO:0048545</td>
+              
+              <td>Response to Steroid Hormone</td>
+              
+              <td>Gene Ontology BP</td>
+              
+              <td>8 / 10</td>
+              
+              <td>6.93e-10</td>
+              
+              <td>BCL2, FKBP5, FOXA1, IGF1R, KLK3, NK...</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>GO:0006629</td>
+              
+              <td>Lipid Metabolic Process</td>
+              
+              <td>Gene Ontology BP</td>
+              
+              <td>6 / 6</td>
+              
+              <td>1.04e-08</td>
+              
+              <td>ACSL3, GUCY1A3, MAOA, PPAP2A, SEC14...</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>GO:0006915</td>
+              
+              <td>Regulation of Apoptosis</td>
+              
+              <td>Gene Ontology BP</td>
+              
+              <td>4 / 5</td>
+              
+              <td>2.68e-05</td>
+              
+              <td>BCL2, CDKN1A, IGFBP3, IL6...</td>
+              
+            </tr>
+            
+            <tr>
+              
+              <td>GO:0008283</td>
+              
+              <td>Cell Proliferation & Growth Control</td>
+              
+              <td>Gene Ontology BP</td>
+              
+              <td>3 / 8</td>
+              
+              <td>5.68e-03</td>
+              
+              <td>CCND1, CDKN1A, IGF1R...</td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="disclaimer">
+      <strong>Scientific & Ethical Notice:</strong> This RNA-seq analysis is a computational genomics study of publicly available transcriptomic data. It does NOT make clinical diagnostic claims or medical therapy recommendations.
+    </div>
+    
+
+    <footer>
+      <p>Computational Biology & Bioinformatics Engineering Portfolio • Built with Python 3.11+</p>
+    </footer>
+  </div>
+</body>
+</html>

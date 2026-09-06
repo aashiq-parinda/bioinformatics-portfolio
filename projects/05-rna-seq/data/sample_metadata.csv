@@ -1,0 +1,7 @@
+sample_id,condition,replicate,batch,total_reads
+Control_Rep1,Control,1,Batch1,28450120
+Control_Rep2,Control,2,Batch1,26980450
+Control_Rep3,Control,3,Batch2,31200840
+Treated_Rep1,Treated,1,Batch1,29540600
+Treated_Rep2,Treated,2,Batch1,30120300
+Treated_Rep3,Treated,3,Batch2,27890550

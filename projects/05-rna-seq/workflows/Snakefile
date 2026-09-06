@@ -1,0 +1,38 @@
+# Snakemake workflow for Project 05: RNA-Seq Differential Expression & Pathway Analysis
+import json
+
+configfile: "projects/05-rna-seq/configs/rnaseq_config.json"
+
+rule all:
+    input:
+        "projects/05-rna-seq/results/normalized_counts.csv",
+        "projects/05-rna-seq/results/differential_expression_results.csv",
+        "projects/05-rna-seq/results/significant_genes.csv",
+        "projects/05-rna-seq/results/pathway_enrichment_results.csv",
+        "projects/05-rna-seq/results/rnaseq_summary.json",
+        "projects/05-rna-seq/results/rnaseq_analysis_report.html",
+        "projects/05-rna-seq/figures/pca_plot.png",
+        "projects/05-rna-seq/figures/volcano_plot.png",
+        "projects/05-rna-seq/figures/expression_heatmap.png",
+        "projects/05-rna-seq/figures/pathway_enrichment_dotplot.png"
+
+rule run_rnaseq_pipeline:
+    input:
+        counts="projects/05-rna-seq/data/raw_counts_matrix.tsv",
+        metadata="projects/05-rna-seq/data/sample_metadata.csv",
+        config="projects/05-rna-seq/configs/rnaseq_config.json"
+    output:
+        norm="projects/05-rna-seq/results/normalized_counts.csv",
+        de="projects/05-rna-seq/results/differential_expression_results.csv",
+        sig="projects/05-rna-seq/results/significant_genes.csv",
+        enrichment="projects/05-rna-seq/results/pathway_enrichment_results.csv",
+        summary="projects/05-rna-seq/results/rnaseq_summary.json",
+        report="projects/05-rna-seq/results/rnaseq_analysis_report.html",
+        pca="projects/05-rna-seq/figures/pca_plot.png",
+        volcano="projects/05-rna-seq/figures/volcano_plot.png",
+        heatmap="projects/05-rna-seq/figures/expression_heatmap.png",
+        dotplot="projects/05-rna-seq/figures/pathway_enrichment_dotplot.png"
+    shell:
+        """
+        python3 projects/05-rna-seq/src/run_rnaseq_pipeline.py --config {input.config}
+        """
