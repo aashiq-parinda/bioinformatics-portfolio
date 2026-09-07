@@ -1,0 +1,115 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.42in, top=0.38in, bottom=0.38in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% Colors
+\definecolor{primary}{RGB}{16, 44, 87}
+\definecolor{accent}{RGB}{41, 128, 185}
+\definecolor{textdark}{RGB}{33, 37, 41}
+
+% Document settings
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large\color{primary}
+}{}{0em}{}[\color{primary}\titlerule\vspace{-3pt}]
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    {\Huge \textbf{\color{primary}Ashraf Khan}} \\ \vspace{2pt}
+    {\large \textbf{Senior Bioinformatics Software Engineer $\cdot$ Computational Biology \& AI for Science}} \\ \vspace{3pt}
+    \small
+    Mumbai, India \ $|$ \ 
+    +91-8779559898 \ $|$ \ 
+    \href{mailto:ashrafk.salim1@gmail.com}{\color{accent}ashrafk.salim1@gmail.com} \ $|$ \ 
+    \href{https://github.com/aashiq-parinda/bioinformatics-portfolio}{\color{accent}Portfolio: bioinformatics-portfolio} \ $|$ \ 
+    \href{https://github.com/aashiq-parinda}{\color{accent}GitHub: aashiq-parinda} \ $|$ \ 
+    \href{https://linkedin.com/in/ashrafksalim}{\color{accent}LinkedIn: ashrafksalim}
+\end{center}
+\vspace{-8pt}
+
+% --- EXECUTIVE SUMMARY ---
+\section{Executive Profile}
+\vspace{2pt}
+\small{
+Senior Software \& Systems Engineer with 5+ years of production experience across HIPAA-compliant health systems, cloud microservices, and high-throughput computational biology. Unites production engineering rigor with modern computational life sciences: building Nextflow DSL2 genomic pipelines, Meta ESM-2 protein language modeling, single-cell/spatial transcriptomics deconvolution, and biophysical simulation workflows. Proven track record of architecting deterministic algorithms, reproducible containerized workflows, and zero-breach data custody.
+}
+\vspace{-4pt}
+
+% --- SKILLS ---
+\section{Technical Expertise}
+\vspace{2pt}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Computational Biology \& Omics:} Single-cell RNA-seq (\texttt{Scanpy}, \texttt{AnnData}, \texttt{scVI-tools}), Spatial Transcriptomics (\texttt{Squidpy}, \texttt{Cell2location}), Bulk RNA-Seq (\texttt{DESeq2}, Wald test, ORA/GSEA), Clinical Genomics (\texttt{cyvcf2}, \texttt{pysam}, Ensembl VEP, CIViC API, AMP/ASCO/CAP Tiers).
+    \item \textbf{AI for Science \& Biophysics:} Protein Language Models (Meta \texttt{ESM-2} zero-shot fitness scoring, MaveDB DMS benchmarks), AlphaFold v2 (pLDDT/PAE analysis), Molecular Docking (\texttt{AutoDock Vina}, \texttt{RDKit}, \texttt{PLIP}), Molecular Dynamics (\texttt{OpenMM}, \texttt{MDAnalysis}, \texttt{OpenFF}, MM-PBSA).
+    \item \textbf{Pipeline Engineering \& Cloud:} \texttt{Nextflow (DSL2)}, \texttt{nf-core} standards, \texttt{Snakemake}, \texttt{Docker}, \texttt{Singularity}, \texttt{MultiQC}, AWS (EC2, S3, ECS, Fargate), GCP (Cloud Run), GitHub Actions CI/CD.
+    \item \textbf{Core Languages \& Data:} Python (Expert: \texttt{NumPy}, \texttt{SciPy}, \texttt{Pandas}, \texttt{Biopython}, \texttt{PyTorch}), SQL/PostgreSQL, C++, FastAPI, Streamlit, Pytest.
+\end{itemize}
+\vspace{-4pt}
+
+% --- BIOINFORMATICS PROJECTS ---
+\section{Flagship Computational Biology \& Bioinformatics Systems}
+\vspace{2pt}
+\textbf{\href{https://github.com/aashiq-parinda/bioinformatics-portfolio}{\color{accent}Computational Biology \& Bioinformatics Engineering Portfolio}} \hfill \small{\texttt{Python}, \texttt{Nextflow}, \texttt{PyTorch}, \texttt{OpenMM}}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Generative AI / Protein Language Models (\texttt{ESM-2}):} Engineered zero-shot mutational scanning engine scoring all $19 \times L$ amino acid substitutions using masked marginal log-likelihood ratios (LLR); benchmarked predictions against gold-standard experimental \textbf{MaveDB} DMS datasets (\textit{TP53}, \textit{EGFR}, SARS-CoV-2 RBD); built interactive Streamlit + py3Dmol 3D structure viewer.
+    \item \textbf{Production Pathogen Genomic Surveillance (\texttt{Nextflow DSL2}):} Architected nf-core compliant, containerized pipeline processing paired Illumina short reads and Oxford Nanopore long reads: automated QC (\texttt{fastp}/\texttt{NanoPlot}), alignment (\texttt{BWA-MEM2}/\texttt{Minimap2}), variant calling (\texttt{FreeBayes}/\texttt{Clair3}), consensus generation, AMR profiling (\texttt{AMRFinderPlus}/\texttt{CARD}), and MultiQC dashboarding.
+    \item \textbf{Spatial Transcriptomics \& Single-Cell Deconvolution:} Dissected tumor microenvironment using 10x Visium + matched scRNA-seq; implemented Bayesian spot deconvolution (\texttt{Cell2location}), spatial autocorrelation (Moran's $I$, Geary's $C$), and paracrine ligand-receptor mapping.
+    \item \textbf{Precision Oncology Clinical Curation Engine:} Automated somatic variant curation from multi-sample VCFs (\texttt{cyvcf2}); integrated CIViC REST API and ClinVar to assign AMP/ASCO/CAP Tier I--IV actionability and auto-generate oncologist-ready molecular pathology reports.
+    \item \textbf{Explicit-Solvent Molecular Dynamics (\texttt{OpenMM} \& \texttt{MM-PBSA}):} Automated ligand parameterization (\texttt{OpenFF}/\texttt{GAFF2}), periodic TIP3P box solvation, 4-stage GPU simulation protocol, and trajectory analysis (\texttt{MDAnalysis}: RMSD/RMSF/H-bonds, binding free energy $\Delta G_{\text{bind}}$).
+\end{itemize}
+\vspace{-4pt}
+
+% --- EXPERIENCE ---
+\section{Professional Experience}
+\vspace{2pt}
+
+\textbf{Logicloop} \hfill Mumbai, India \\
+\textit{Senior Software \& Systems Engineer} \hfill \small{Jan 2026 -- Present}
+\begin{itemize}[leftmargin=*, nosep]
+    \item Architected enterprise microservices on GCP Cloud Run handling high-throughput distributed workflows and secure data operations.
+    \item Led an engineering team of 3; enforced CI/CD automation, strict code-quality gates (\texttt{ruff}, \texttt{pytest}), and Level 2 VAPT security standards, reducing deployment overhead by 40\%.
+    \item Designed high-performance asynchronous data pipelines and microservices optimizing compute capacity and memory allocation under peak load.
+\end{itemize}
+\vspace{2pt}
+
+\textbf{Fitwell Technologies Inc.} \hfill Remote (VA, USA) \\
+\textit{Full-Stack Developer \& Data Custodian} \hfill \small{Jun 2025 -- Jan 2026}
+\begin{itemize}[leftmargin=*, nosep]
+    \item Spearheaded healthcare data pipelines and health AI workflows on \textbf{HIPAA-compliant AWS infrastructure}.
+    \item Architected isolated PostgreSQL/Supabase database backends with strict role-based access control (RBAC) and row-level security (RLS) for Protected Health Information (PHI), maintaining a \textbf{zero data-breach security posture}.
+    \item Automated cloud infrastructure monitoring and audit logging across EC2 and S3 for compliance verification.
+\end{itemize}
+\vspace{2pt}
+
+\textbf{QuantGen Private Limited} \hfill India \\
+\textit{Lead Software Engineer} \hfill \small{Nov 2024 -- Jun 2025}
+\begin{itemize}[leftmargin=*, nosep]
+    \item Engineered and deployed enterprise health data platforms utilizing AWS ECS and App Runner container orchestration.
+    \item Optimized backend database queries and REST/gRPC API response latencies for high-availability production environments.
+\end{itemize}
+\vspace{-4pt}
+
+% --- EDUCATION & CERTIFICATIONS ---
+\section{Education \& Professional Certifications}
+\vspace{2pt}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Bachelor of Engineering (B.E.)} $\cdot$ University of Mumbai, India
+    \item \textbf{Certifications:} Healthcare API Compliance \& HIPAA PHI Data Governance $\cdot$ Deep Learning \& Machine Learning with Python $\cdot$ FinTech Regulatory Standards \& Secure Data Governance
+\end{itemize}
+
+\end{document}

@@ -1,10 +1,12 @@
 # Professional Bioinformatics Freelancing & Client Services Matrix
 
-This guide outlines professional bioinformatics services mapped directly to the competencies demonstrated across this portfolio. Each service tier defines client deliverables, typical scopes of work, and honest boundaries distinguishing beginner-ready engagements from advanced senior-only contracts.
+> 💡 **Detailed Pricing & Rate Card:** For fixed-price project quotes, hourly consulting rates, and monthly retainer packages in both USD ($) and INR (₹), see the full [Bioinformatics Freelance Services & Rate Card](../Bioinformatics_Freelance_Services_Pricing.md).
+
+This guide outlines professional bioinformatics services mapped directly to the competencies demonstrated across this 10-project portfolio. Each service tier defines client deliverables, typical scopes of work, and production engineering standards.
 
 ---
 
-## 1. Direct Service Mapping by Portfolio Flagship
+## 1. Direct Service Mapping Across Portfolio Flagships
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -15,6 +17,11 @@ This guide outlines professional bioinformatics services mapped directly to the 
 │ 03. AlphaFold 3D  │ Structure Assessment • pLDDT/PAE • Binding Pockets │
 │ 04. Docking Vina  │ Virtual Screening • Ligand Posing • Contact Profil │
 │ 05. RNA-Seq DE    │ End-to-End Counts to Volcano • Pathway Enrichment  │
+│ 06. Spatial Omics │ 10x Visium + scRNA-seq • TME Deconvolution • L-R   │
+│ 07. Protein AI    │ Meta ESM-2 Zero-Shot Mutational Scanning • Web App │
+│ 08. Nextflow DSL2 │ nf-core WGS Pathogen Surveillance • AMR • MultiQC   │
+│ 09. Precision Med │ AMP/ASCO/CAP Somatic VCF Curation • Clinical PDF   │
+│ 10. Dynamics MD   │ OpenMM GPU Simulation • MM-PBSA Free Energy        │
 └───────────────────┴────────────────────────────────────────────────────┘
 ```
 
