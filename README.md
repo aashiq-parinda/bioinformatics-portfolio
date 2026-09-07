@@ -13,22 +13,33 @@
 
 ## 🎯 Engineering & Biological Positioning
 
-This repository showcases production-grade scientific software engineering applied to fundamental challenges in molecular biology, structural pharmacology, evolutionary genomics, and transcriptomics. Rather than disconnected tutorials or shallow notebooks, this portfolio demonstrates **robust system architecture**, **deterministic algorithms**, **clean test suites**, and **reproducible workflows** utilizing real public biological data from NCBI, UniProt, RCSB PDB, AlphaFold DB, and GEO.
+This repository showcases production-grade scientific software engineering applied to fundamental challenges in molecular biology, structural pharmacology, evolutionary genomics, transcriptomics, generative AI, and clinical bioinformatics. Rather than disconnected tutorials or shallow notebooks, this portfolio demonstrates **robust system architecture**, **deterministic algorithms**, **clean test suites**, and **reproducible production workflows** utilizing real public biological data from NCBI, UniProt, RCSB PDB, AlphaFold DB, GEO, and MaveDB.
 
 ```
                      BIOLOGICAL & COMPUTATIONAL PROGRESSION
-  
-  01. SEQUENCE        02. EVOLUTION       03. STRUCTURE       04. INTERACTION     05. TRANSCRIPTOMICS
+
+  [PART I: FOUNDATIONAL GENOMICS & STRUCTURAL PHARMACOLOGY]
+  01. SEQUENCE        02. EVOLUTION       03. STRUCTURE       04. DOCKING         05. RNA-SEQ
   ┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌─────────────────┐
   │ FASTA Parser │    │ Multi-Align  │    │ AlphaFold v2 │    │ AutoDock     │    │ RNA-Seq Counts  │
   │ Physicochem  ├───►│ Orthologs    ├───►│ pLDDT / PAE  ├───►│ Vina Docking ├───►│ Normalization   │
   │ BLAST+ CLI   │    │ Phylogeny    │    │ Pocket Cleft │    │ Interaction  │    │ DE & Pathways   │
+  └──────────────┘    └──────────────┘    └──────────────┘    └──────────────┘    └─────────────────┘
+                                                                                            │
+  [PART II: MODERN MODALITIES, GENERATIVE AI & PRODUCTION ENGINEERING]                      ▼
+  10. DYNAMICS        09. CLINICAL        08. SURVEILLANCE    07. AI PROTEIN      06. SPATIAL OMICS
+  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐    ┌─────────────────┐
+  │ OpenMM GPU   │    │ AMP / ASCO   │    │ Nextflow DSL2│    │ Meta ESM-2   │    │ 10x Visium + sc │
+  │ MM-PBSA Free │◄───┤ VCF Somatic  │◄───┤ AMR Profiling│◄───┤ Zero-Shot DMS│◄───┤ Cell2location   │
+  │ Energy & RMSD│    │ CIViC Action │    │ MultiQC Cloud│    │ MaveDB Bench │    │ Ligand-Receptor │
   └──────────────┘    └──────────────┘    └──────────────┘    └──────────────┘    └─────────────────┘
 ```
 
 ---
 
 ## 📂 Flagship Projects Matrix
+
+### Part I: Foundational Genomics & Structural Pharmacology
 
 | Project | Core Domain | Primary Tools & Algorithms | Key Engineering Deliverables | Real Dataset / Accession |
 | :--- | :--- | :--- | :--- | :--- |
@@ -38,46 +49,57 @@ This repository showcases production-grade scientific software engineering appli
 | **[04. Molecular Docking](projects/04-protein-ligand-docking)** | Computational Pharmacology | AutoDock Vina, RDKit, PLIP, Snakemake | Parameterized docking pipeline, MMFF94 ligand prep, interaction fingerprinting | AR-LBD + DHT / Enzalutamide (`PubChem: 10635`) |
 | **[05. RNA-Seq Pipeline](projects/05-rna-seq)** | Functional Transcriptomics | DESeq2 / Negative Binomial GLM, ORA, Snakemake | FastQC QC synthesis, Median-of-Ratios norm, Wald test DE, Volcano/PCA, GO/KEGG | Hormone Response Muscle Study (`GEO: GSE153664`) |
 
+### Part II: Modern Modalities, Generative AI & Production Systems
+
+| Project | Core Domain | Primary Tools & Algorithms | Key Engineering Deliverables | Real Dataset / Accession |
+| :--- | :--- | :--- | :--- | :--- |
+| **[06. Spatial Transcriptomics](projects/06-spatial-transcriptomics)** | Single-Cell & Spatial Omics | Scanpy, Squidpy, AnnData, scVI, Cell2location | Tumor microenvironment deconvolution, Moran's $I$ spatial autocorrelation, paracrine signaling | 10x Visium Breast/CRC + matched scRNA-seq (`GSE176078`) |
+| **[07. Protein Language Models](projects/07-protein-language-models)** | Generative AI & Protein Engineering | PyTorch, Meta ESM-2, HuggingFace, Streamlit | Zero-shot masked marginal LLR fitness scoring, MaveDB DMS validation, interactive 3D mutational dashboard | Human *TP53* (`urn:mavedb:00000068`), SARS-CoV-2 RBD |
+| **[08. Nextflow Surveillance](projects/08-nextflow-pathogen-surveillance)** | Bioinformatics DevOps & Cloud Pipelines | Nextflow DSL2, Docker/Singularity, MultiQC | nf-core compliant pathogen surveillance pipeline, AMR gene profiling, automated CI/CD & cloud scaling | Viral/Microbial WGS (Illumina & Oxford Nanopore) |
+| **[09. Clinical Interpretation](projects/09-clinical-variant-interpretation)** | Clinical Genomics & Precision Oncology | Python, cyvcf2, Ensembl VEP, CIViC REST API | Automated AMP/ASCO/CAP 4-tier somatic curation, drug matching engine, molecular pathology PDF report | Somatic NGS Tumor-Normal Panels (`MSK-IMPACT` / TCGA) |
+| **[10. Molecular Dynamics](projects/10-molecular-dynamics-simulation)** | Computational Biophysics & Drug Discovery | OpenMM, MDAnalysis, OpenFF, AMBER ff14SB | Explicit-solvent GPU MD engine, RMSD/RMSF & H-bond stability, MM-PBSA binding free energy ($\Delta G_{\text{bind}}$) | AR-LBD + Enzalutamide / Resistance Mutants (`PDB: 1E3G`) |
+
 ---
 
 ## 🏛️ System Architecture
 
 ```
 bioinformatics-portfolio/
-├── shared/                         # Reusable core engineering libraries
-│   ├── io/                         # FASTA, PDB, PDBQT, Tabular parsers
-│   ├── logging/                    # Structured logging with Rich formatters
-│   ├── visualization/              # Publication themes (300 DPI, vector export)
-│   ├── reporting/                  # Standalone Jinja2 HTML report generator
-│   └── utils/                      # Rate-limiting, checksums, physical constants
+├── shared/                             # Reusable core engineering libraries
+│   ├── io/                             # FASTA, PDB, PDBQT, Tabular parsers
+│   ├── logging/                        # Structured logging with Rich formatters
+│   ├── visualization/                  # Publication themes (300 DPI, vector export)
+│   ├── reporting/                      # Standalone Jinja2 HTML report generator
+│   └── utils/                          # Rate-limiting, checksums, physical constants
 │
-├── projects/                       # 5 Flagship computational biology projects
-│   ├── 01-sequence-homology/       # bioseq CLI tool and BLAST orchestration
+├── projects/                           # 10 Flagship computational biology projects
+│   ├── 01-sequence-homology/           # bioseq CLI tool and BLAST orchestration
 │   ├── 02-androgen-receptor-phylogenetics/ # Comparative MSA and tree inference
 │   ├── 03-alphafold-structure-analysis/    # 3D structure and pLDDT/PAE metrics
-│   ├── 04-protein-ligand-docking/  # AutoDock Vina & PLIP interaction workflow
-│   └── 05-rna-seq/                 # End-to-end RNA-seq DE & pathway analysis
+│   ├── 04-protein-ligand-docking/      # AutoDock Vina & PLIP interaction workflow
+│   ├── 05-rna-seq/                     # End-to-end RNA-seq DE & pathway analysis
+│   ├── 06-spatial-transcriptomics/     # 10x Visium & scRNA-seq tumor deconvolution
+│   ├── 07-protein-language-models/     # ESM-2 zero-shot DMS fitness prediction & app
+│   ├── 08-nextflow-pathogen-surveillance/ # Nextflow DSL2 pathogen WGS & AMR pipeline
+│   ├── 09-clinical-variant-interpretation/# AMP/ASCO/CAP oncology variant curation engine
+│   └── 10-molecular-dynamics-simulation/  # OpenMM explicit-solvent MD & MM-PBSA
 │
-├── docs/                           # Architecture, reproducibility & services
-│   ├── reproducibility.md          # Provenance tracking & deterministic guidelines
-│   ├── tools.md                    # Algorithmic & mathematical inventory
-│   ├── architecture.md             # Clean architecture specifications
-│   └── freelancing-services.md     # Client service mapping & ethical boundaries
-│
-├── tests/                          # Root integration & shared tests
-├── Makefile                        # Developer & workflow orchestration
-└── pyproject.toml                  # Pinned dependencies & build configuration
+├── docs/                               # Architecture, reproducibility & services
+├── tests/                              # Root integration & shared tests
+├── Makefile                            # Developer & workflow orchestration
+└── pyproject.toml                      # Pinned dependencies & build configuration
 ```
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Core & Scientific Computing**: Python 3.11+, NumPy, SciPy, Pandas, Statsmodels.
-- **Bioinformatics Libraries**: Biopython, RDKit, PyMOL automation scripts.
-- **Workflow & CLI Engineering**: Typer, Rich, Snakemake, Jinja2.
-- **Visualization**: Matplotlib, Seaborn, SVG/HTML dynamic reporting.
-- **Quality & CI/CD**: Pytest, Pytest-Cov, Ruff, Mypy, GitHub Actions.
+- **Deep Learning & Generative Biology**: PyTorch, Hugging Face Transformers, Meta ESM-2, scVI-tools.
+- **Single-Cell & Spatial Omics**: Scanpy, Squidpy, AnnData, Cell2location.
+- **Biophysics & Molecular Modeling**: OpenMM, MDAnalysis, OpenFF, RDKit, Biopython.
+- **Pipeline Orchestration & DevOps**: Nextflow (DSL2), Snakemake, Docker, Singularity, MultiQC, GitHub Actions CI.
+- **Clinical Genomics**: cyvcf2, pysam, Ensembl VEP, CIViC API, ReportLab.
+- **Web & Interactive Analytics**: Streamlit, py3Dmol, Rich, Typer, Jinja2.
 
 ---
 
